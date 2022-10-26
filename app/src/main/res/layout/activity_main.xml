@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+         - ConstraintLayout có một đặc tính là liên kết như cái lò xo, ta có thể set độ xứng bằng
+            thuộc tính bias, để view có thể thay đổi theo độ cứng độ
+
+         - Hai thuộc tính thay đổi độ cứng đó là constraintHorizontal_bias và constraintVertical_bias
+
+         - constraintHorizontal_bias tính từ trái
+
+         - constraintVertical_bias tính từ trên
+
+         - Ta có thể sử dụng những đường kẻ ảo để các view có thể neo vào
+            -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 1"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/g1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="MissingConstraints"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Button 2"
+        app:layout_constraintTop_toBottomOf="@+id/button_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent "
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

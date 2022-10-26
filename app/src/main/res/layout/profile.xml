@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/image_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96"
+        />
+
+    <ImageView
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wallpaper"
+        app:layout_constraintBottom_toBottomOf="@id/image_guide"
+        android:scaleType="centerCrop"
+        />
+
+    <!-- Muốn cho một view đè lên thì neo top và bottom vào cái view muốn đè lên -->
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintStart_toEndOf="@+id/start_guide"
+        app:layout_constraintTop_toBottomOf="@+id/wallpaper"
+        app:layout_constraintBottom_toBottomOf="@+id/wallpaper"
+        />
+
+    <ImageView
+        android:id="@+id/notification"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_baseline_notifications_none_24"
+        app:layout_constraintEnd_toStartOf="@+id/end_guide"
+        app:layout_constraintTop_toBottomOf="@+id/wallpaper"
+        android:layout_marginTop="12dp"
+        />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_baseline_mail_outline_24"
+        app:layout_constraintEnd_toStartOf="@+id/notification"
+        app:layout_constraintTop_toBottomOf="@+id/wallpaper"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToolKitty"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/avatar"
+        app:layout_constraintStart_toEndOf="@+id/start_guide"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        />
+    
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mountain View"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_outline_location_on_24"
+        app:layout_constraintEnd_toStartOf="@+id/address"
+        app:layout_constraintBottom_toBottomOf="@+id/address"
+        app:layout_constraintTop_toTopOf="@+id/address"
+        android:layout_marginEnd="4dp"
+        />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/start_guide"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Domestic Short-hair"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        app:layout_constraintStart_toEndOf="@+id/start_guide"
+        android:layout_marginTop="16dp"
+        android:textColor="#3a414d"
+        />
+
+    <TextView
+        android:id="@+id/number_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="322"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Following"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@id/number_following"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/number_following"
+        />
+
+    <TextView
+        android:id="@+id/number_follower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/following"
+        app:layout_constraintBottom_toBottomOf="@+id/number_following"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="12dp"
+        />
+
+    <TextView
+        android:id="@+id/follower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Follower"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@id/number_follower"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/number_following"
+        />
+
+    <TextView
+        android:id="@+id/posts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4e8eed"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Posts"
+        app:layout_constraintTop_toBottomOf="@+id/number_following"
+        app:layout_constraintStart_toEndOf="@+id/start_guide"
+        android:layout_marginTop="16dp"
+        />
+
+    <ImageView
+        android:id="@+id/post_1"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/friend_1"
+        app:layout_constraintTop_toBottomOf="@+id/posts"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/friend_name_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Londyn Decker"
+        app:layout_constraintStart_toEndOf="@+id/post_1"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/post_1"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="12dp"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You can use the overview graphic to select"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toEndOf="@+id/post_1"
+        app:layout_constraintBottom_toBottomOf="@+id/post_1"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="4dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09:13"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/end_guide"
+        app:layout_constraintTop_toTopOf="@+id/post_1"
+        android:layout_marginTop="4dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
